@@ -1,0 +1,16 @@
+name: Test
+version: ${project.version}
+main: com.aonoasgard.test.PrimoPlugin
+api-version: 1.16
+prefix: [ AoNoAsgard ]
+authors: [ AoNoAsgard ]
+commands:
+  test:
+    description: è un comando di test
+    usage: /test
+    permission-message: non hai il permesso di usare questo comando
+  inventory:
+    description: è un comando che permette di aprire l'inventario di un altro giocatore
+    usage: /inventory
+    permission: test.inventory
+    permission-message: non hai il permesso di usare questo comando
