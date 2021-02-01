@@ -1,8 +1,6 @@
 package com.aonoasgard.test.event.sleep;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Effect;
-import org.bukkit.Location;
+import org.bukkit.*;
 import org.bukkit.entity.Creeper;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -10,6 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedEnterEvent;
 import org.bukkit.event.player.PlayerBedLeaveEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -19,7 +18,7 @@ import java.util.List;
 
 public class SleepEventListener implements Listener {
 
-    @EventHandler
+    //@EventHandler
     public void onSleep(PlayerBedEnterEvent event){
         int random =(int)(Math.random()*10+1);
         //Bukkit.broadcastMessage(Integer.toString(random));
@@ -43,6 +42,11 @@ public class SleepEventListener implements Listener {
             event.getPlayer().addPotionEffects(effetti);
             event.getPlayer().setFoodLevel(event.getPlayer().getFoodLevel()-4);
             effetti.clear();
+        }
+        if(random==2){
+            event.getPlayer().sendMessage(ChatColor.GOLD+"HAI FATTO LA CACCA");
+            event.getPlayer().damage(0.5);
+            event.getPlayer().getWorld().dropItem(event.getPlayer().getLocation(),new ItemStack(Material.BROWN_DYE,12));
         }
     }
 

@@ -17,3 +17,8 @@ commands:
     usage: /hunt [help/info/status/start/stop]
     permission: test.hunt
     permission-message: non hai il permesso di usare questo comando
+  setwarp:
+    description: ti permette di settare dei waypoint per teletrasportartici con /warp
+    usage: /setwarp <nome-waypoint>
+    permession: test.warp
+    permission-message: non hai il permesso di usare questo comando
